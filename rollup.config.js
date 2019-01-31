@@ -34,6 +34,24 @@ export default [
         plugins
     },
     {
+        input: "./src/mapper.js",
+        output: {
+            file: "build/mapper_TS_read_sfx.mjs",
+            format: "esm"
+        },
+        plugins,
+        treeshake: {propertyReadSideEffects: false}
+    },
+    {
+        input: "./src/mapper.js",
+        output: {
+            file: "build/mapper_TS_ext_mod.mjs",
+            format: "esm"
+        },
+        plugins,
+        treeshake: {pureExternalModules: true}
+    },
+    {
         input: "./src/splitter.js",
         output: {
             file: "build/splitter.mjs",
